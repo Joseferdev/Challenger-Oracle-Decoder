@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body class="grid-containe">
+   
+    <canvas width="500" height="500" id="lienzo"></canvas>
+
+    <header>
+        <div class="logo">
+            <h1><img src="img/logo-by.png" alt=""></h1>
+            <h3>By Jose F. Quintero</h3>
+         </div>
+         
+    </header>
+  
+    <div class="cuerpo">
+    <section>
+        
+        <div class="texto">
+            <textarea class="verificar" id="encriptado" type="text" value="ok" autofocus placeholder="Ingrese texto aquí"></textarea>
+            <div class="error" id="error"><i class='bx bx-error'></i>Debe ingresar un texto</div>
+        </div>
+        <div>
+            <p>NOTA: Se recomienda letras minúsculas y sin acentos</p>
+            
+        </div>
+        <div class="btn">
+            <button type="button" id="encriptar" onclick="encriptar()"><span>Encriptar</span></button>
+            <button type="button" id="desencriptar" onclick="desencriptar()"><span>Desencriptar</span></button>
+        </div>
+    </section>
+   
+    <main>
+        <div id="noHayMensaje" class="img-text">
+            <img src="img/key-2.png" alt="">
+            <h2>"No hay mensaje encriptado"</h2>
+            <p>Ingrese un texto para encriptar</p>
+        </div>
+        
+        <div id="mostrarMensaje" class="text-encri">
+            <div id="checkCopy" class="check"><i class='bx bx-comment-check'></i>¡Copiado!</div>
+            <div type="text" class="mensaje" id="mensajeEncriptado" value=""></div>
+            <div id="copiar" class="btn-copy">
+                <div class="box">
+                <button type="button" class="clipboard" id="copiar-texto" onclick="copy()" ><span>Copiar</span></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="index.js"></script>
+    
+</body>
+
+</html>

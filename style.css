@@ -1,0 +1,495 @@
+*{
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-primary: #0f0;
+    --color-secundary: #000000;
+    --text-color: #d4d4d4;
+    --text-color2: #ffffff;
+}
+html {
+    height: 100vh;
+    width: 100vw;
+}
+body {
+    position: relative;
+    margin: 0;
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 0;
+    overflow-x: hidden;
+    z-index: 1;
+}
+canvas {
+    height: 100vh;
+    position: fixed;
+    z-index: -5;
+}
+header {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header img {
+    width: 4rem;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+header img:hover {
+    box-shadow: -2px 4px 18px 4px rgb(55, 139, 70)
+}
+header h3 {
+    color: var(--text-color2);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+.cuerpo {
+    display: flex;
+}
+section {
+    width: 60%;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.texto{
+    position: relative;
+}
+.error {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 36%;
+    margin: center;
+    display: none;
+    align-items: center;
+    z-index: 200;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+
+}
+.error i {
+    font-size: 1.7rem;
+    color: #ff0000;
+    margin-right: 5px;
+}
+
+section textarea {
+    padding: auto;
+    width: 730px;
+    height: 430px;
+    margin-left: 150px;
+    outline: none;
+    cursor: pointer;
+    resize: none;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background: #87c0f5;  
+    background: -webkit-linear-gradient(to right, #ffffff00, #ffffff00, #ffffff00);  
+    background: linear-gradient(to right, #ffffff00, #ffffff00, #ffffff00); 
+    backdrop-filter: blur(0.4rem);
+    border: 0.1px solid #00ff1a3f;
+    border-radius: 10px;
+}
+section textarea::-webkit-scrollbar {
+    width: 5px;
+}
+section textarea::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+section p {
+    width: 70%;
+    margin-left: 150px;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.1rem; 
+    color: var(--text-color);
+    font-weight: bold;
+}
+section .btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+section .btn button {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+section .btn button::before,
+section .btn button::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition: 0.5s;
+    border-radius: 7px;
+}
+section .btn button:nth-child(1)::before,
+section .btn button:nth-child(1)::after{
+    background: linear-gradient(45deg,#002fff, #000000, #002fff);
+    border-radius: 7px;
+}
+section .btn button:nth-child(2)::before,
+section .btn button:nth-child(2)::after{
+    background: linear-gradient(45deg,#ff0000, #000000, #ff0000);
+    border-radius: 7px;
+}
+section .btn button:hover::before {
+    inset: -3px;
+}
+section .btn button:hover::after {
+    inset: -3px;
+    filter: blur(10px);
+}
+section .btn button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: var(--color-primary);
+    background: linear-gradient(45deg, #000000, #363636);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 100;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+main {
+    background: #000000;
+    width: 30%;
+    height: 37em;
+    border-radius: 10px;
+    box-shadow: 1px -1px 7px 0 rgba(0, 255, 47, 0.429);
+}
+main .img-text {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    height: 400px;
+
+}
+main img {
+    width: 15rem;
+}
+main h1 {
+    font-family: monospace;
+    color: var(--color-primary);
+    font-size: 10rem;
+    padding: 0;
+    margin: 0;
+}
+main h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    text-align: center;
+}
+main p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main .text-encri {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 10px;
+    max-width: 95%;
+    height: 38em;
+    margin-top: 1px;
+    border-radius: 10px;
+    gap: 5px;
+}
+main .check{
+    position: absolute;
+    display: none;
+    height: 40px;
+    background-color: #000000;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color2);
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    top: 67%;
+    left: 33%;
+    text-align: center;
+    font-weight: bold;
+    z-index: 200;
+}
+main .check i {
+    color: var(--color-primary);
+    font-size: 35px;
+    margin-right: 5px;
+}
+   
+main .mensaje {
+    padding: auto;
+    max-width: 500px;
+    height: 430px;
+    margin-left: 150px;
+    outline: none;
+    resize: none;
+    margin-left: 10px;
+    top: 10px;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+main .mensaje::-webkit-scrollbar {
+    width: 5px;
+}
+main .mensaje::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+main .btn-copy {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+main .box {
+    position: relative;
+    width: 223px;
+    height: 62px;
+    background-color: #000000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+main .box:hover:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 222px;
+    height: 62px;
+    transform-origin: bottom right;
+    background-image: linear-gradient(0deg, transparent, var(--color-primary), var(--color-primary));
+    animation: animacion 1s linear infinite;
+}
+@keyframes animacion {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+main .box button {
+    position: absolute;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+main .box button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: var(--color-primary);
+    background: linear-gradient(45deg, #000000, #363636);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 100;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/*responsive*/
+@media (max-width: 1500px){
+    section textarea{
+        width: 600px;
+        height: 400px;
+        margin-left: 130px;
+    }
+    section p{
+        margin-left: 130px;
+    }
+    section .btn{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50px;
+    }
+    main{
+        display: block;
+        height: 540px;
+    }
+}
+@media (max-width: 1240px){
+    section textarea{
+        width: 50vw;
+        height: 330px;
+        margin-left: 50px;
+    }
+    section p{
+        margin-left: 100px;
+    }
+    section .btn{
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-left: 40px;
+    }
+    main{
+        display: block;
+    }
+
+
+}
+@media (max-width: 990px){
+    section textarea{
+        width: 50vw;
+        height: 430px;
+        margin-left: 50px;
+    }
+    .error {
+        left: 50%;
+    }
+    section p{
+        margin-left: 50px;
+    }
+    main{
+        display: block;
+    }
+    main img{
+        width: 13rem;
+    }
+    main h2{
+        font-size: 1.2rem;
+    }
+    main p{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 720px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        height: 80px;
+    }
+    .logo img {
+        width: 2rem;
+    }
+    .logo h3 {
+        font-size: 1rem;
+    }
+    .cuerpo {
+        display: flex;
+        flex-direction: column;
+    }
+    section img {
+        width: 13rem;
+        padding: 30px;
+    }
+    .error {
+        font-size: .9rem;
+        left: 50%;
+    }
+    section textarea{
+        width: 90vw;
+        height: 300px;
+        margin-left: 20px;
+        font-size: 1.2rem;
+    }
+    section p{
+        width: 90vw;
+        font-size: 1.03rem;
+        margin-left: 20px;
+        align-items: center;
+    }
+    section .btn{
+        width: 95vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+    }
+    main{
+        display: block;
+        margin-top: 35px;
+        width: 90vw;
+        height: 600px;
+        margin-left: 20px;
+    }
+    main .btn-copy {
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    main .check{
+        left: 30%;
+        top: 80%;
+    }
+    main .mensaje {
+        font-size: 1.2rem;
+        height: 500px;
+    }
+}
