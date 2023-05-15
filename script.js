@@ -43,7 +43,6 @@ function encriptar() {
   encriptado = encriptado.replace(/i/gim, 'imel');
   encriptado = encriptado.replace(/a/gim, 'ai');
   encriptado = encriptado.replace(/u/gim, 'ufat');
-  encriptado = encriptado.replace(/ /gim, Math.round(Math.random() * 1));
 
   document.getElementById('mensajeEncriptado').innerHTML = encriptado;
   /*cambiar contenedor */
@@ -65,7 +64,6 @@ function desencriptar() {
   encriptado = encriptado.replace(/imel/gim, 'i');
   encriptado = encriptado.replace(/ai/gim, 'a');
   encriptado = encriptado.replace(/ufat/gim, 'u');
-  encriptado = encriptado.replace(/ /gim, Math.round(Math.random() * 1));
 
   document.getElementById('mensajeEncriptado').innerHTML = encriptado;
 
